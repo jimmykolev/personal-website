@@ -28,10 +28,18 @@ import kent from './img/kent.webp';
 import { ArrowUpRight } from 'lucide-react';
 import { ArrowRight } from 'lucide-react';
 
-export function Information() {
+
+export default function Home() {
     return (
-   <>
-   <div className='information'>
+        <>
+        <motion.div 
+        className='main'
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+        >
+        <Links/>
+        <div className='information'>
    <motion.div
   className="inline-block h-30 w-30"
   whileHover={{ rotate: 359, transition: { duration: 0.3 } }}
@@ -50,14 +58,6 @@ export function Information() {
          <a href="mailto:jimmykolev@gmail.com" className='contact-arrow'><span>Contact Me </span><span>➚</span></a>
          </h1>
    </div>
-   </>
-    );
-   
-}
-
-export function Pages() {
-    return (
-   <>
    <div className='page-info'>
             <h1>Pages</h1>
         </div>
@@ -79,14 +79,7 @@ export function Pages() {
     </a> 
 </div>
    </div>
-   </>
-    );
-}
-
-export function Projects() {
-  return (
-      <>
-      <div className='tools-info'>
+   <div className='tools-info'>
           <h1>Projects</h1>
       </div>
       <h1 className='tools-dev'>Favourite Projects</h1>
@@ -115,15 +108,7 @@ export function Projects() {
 
   </a>
 </div>
-
-      </>
-  );
-}
-
-export function Tools() {
-    return (
-        <>
-        <div className='tools-info'>
+<div className='tools-info'>
             <h1>Tools</h1>
         </div>
         <h1 className='tools-dev'>Development</h1>
@@ -255,24 +240,6 @@ export function Tools() {
         </div>
         
         <div className='split'></div>
-        </>
-    );
-}
-
-export default function Home() {
-    return (
-        <>
-        <motion.div 
-        className='main'
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        exit={{opacity: 0}}
-        >
-        <Links/>
-        <Information/>
-        <Pages/>
-        <Projects/>
-        <Tools/>
         <Footer/>
         </motion.div>      
         </>   
